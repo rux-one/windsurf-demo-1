@@ -23,3 +23,4 @@ Analyze the attached HTML5 template(s) with the following objectives:
      - The accessibility problems identified and the specific changes made to resolve them.
 
 Present the improved CSS (or relevant code changes) and the summary report as your output. As the final step, save the report under `report.md` in root directory.
+Make sure to not amend the original HTML files - mirror all the changes under ./v2 directory and keep all the website content.

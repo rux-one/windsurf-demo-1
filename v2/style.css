@@ -1,428 +1,417 @@
-/* General Body Styles */
-:root {
-    --primary-bg: #CCCCCC; /* Light gray background */
-    --content-bg: #FFFFFF; /* White content area */
-    --header-bg: #003366; /* Darker, accessible blue */
-    --header-text: #FFFFFF; /* White text for header */
-    --nav-bg: #E0E0E0; /* Lighter gray for nav */
-    --nav-text: #003366; /* Dark blue for nav links */
-    --nav-hover-bg: #003366;
-    --nav-hover-text: #FFFFFF;
-    --sidebar-bg: #F5F5F5; /* Very light gray for sidebars */
-    --footer-bg: #333333; /* Dark Gray for footer */
-    --footer-text: #E0E0E0; /* Lighter Gray text for footer */
-    --link-color: #005A9C;
-    --link-hover-color: #D9534F; /* Contrasting red for hover */
-    --border-color: #000000;
-    --text-color: #212121; /* Darker text for better contrast */
-    --heading-color-dark: #003366;
-    --heading-color-red: #A30000; /* Darker red for headings */
+/* Global Reset & Base Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    font-size: 16px; /* Base font size for rem calculations */
+html {
+    font-size: 100%; /* Basis for rem units, typically 16px */
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--primary-bg);
+    background-color: #CCCCCC; /* Light gray background */
     background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
     font-family: "Times New Roman", Times, serif;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    font-size: 1rem; /* Approx 16px */
+    color: #333333; /* Darker gray for better readability */
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-* {
-    box-sizing: border-box;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-style: none; /* Removes default border from linked images in old browsers */
 }
 
-a:focus,
-button:focus,
-input[type="submit"]:focus,
-input[type="button"]:focus {
-    outline: 2px solid var(--link-hover-color);
-    outline-offset: 2px;
+a {
+    text-decoration: none;
+    color: #000066; /* Dark Blue */
 }
 
-.page-wrapper {
-    background-color: var(--content-bg);
-    border: 3px double var(--heading-color-dark);
-    max-width: 1200px; /* Max width for large screens, flexible */
-    margin: 1rem auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+/* Main Layout Container */
+.container {
+    background-color: #FFFFFF; /* White content area */
+    border: 3px double #000066; /* Dark blue double border */
+    width: 100%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: 1rem auto; /* Centering with some top/bottom margin */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Content Wrapper for Flex Layout (Sidebars + Main) */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 /* Header */
-#header {
-    background-color: var(--header-bg);
-    color: var(--header-text);
+.site-header {
+    background-color: #000066; /* Dark blue */
+    color: #FFFF00; /* Yellow text */
     padding: 1rem;
     text-align: center;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid #000000;
 }
-#header h1 {
+
+.site-header h1 {
     font-family: "Arial Black", Gadget, sans-serif;
-    font-size: 2.25rem; /* 36px / 16px */
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.125rem; /* 2px / 16px */
+    font-size: 2.25rem; /* Approx 36px */
+    margin-bottom: 0.25rem;
+    letter-spacing: 2px;
 }
-#header p {
+
+.site-header p {
     font-family: Verdana, Geneva, sans-serif;
-    font-size: 0.9375rem; /* 15px / 16px, increased from 11px */
-    margin: 0.3125rem 0 0 0; /* 5px / 16px */
+    font-size: 0.875rem; /* Approx 11px */
     font-style: italic;
 }
 
 /* Navigation */
-.nav {
-    background-color: var(--nav-bg);
-    padding: 0.75rem; /* 12px / 16px, increased from 8px */
+.main-nav {
+    background-color: #999999; /* Medium Gray */
+    padding: 0.75rem;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
-    border-top: 1px solid var(--border-color);
-}
-.nav a {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: var(--nav-text);
-    text-decoration: none;
-    padding: 0.5rem 1rem; /* Increased padding */
-    margin: 0 0.25rem;
-}
-.nav a:hover, .nav a:focus {
-    color: var(--nav-hover-text);
-    background-color: var(--nav-hover-bg);
-    text-decoration: underline;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #000000;
 }
 
-/* Content Grid using Flexbox */
-.content-grid {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    padding: 1rem;
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.main-nav a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #000066; /* Dark Blue - WCAG AA Pass on #999999 */
+    padding: 0.25rem 0.5rem;
+    display: block;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    color: #FFFF00; /* Yellow - WCAG AA Pass on #333333 */
+    background-color: #333333; /* Darker Gray on hover */
+    text-decoration: underline;
 }
 
 /* Sidebars */
-#leftSidebar, #rightSidebar {
-    background-color: var(--sidebar-bg);
+.sidebar {
+    background-color: #EEEEEE; /* Very light gray */
     padding: 1rem;
-    font-size: 0.9375rem; /* 15px / 16px, increased from 11px */
-    flex-basis: 180px; /* Initial basis, can grow/shrink */
-    flex-grow: 1;
-}
-#leftSidebar {
-    border-right: 1px solid #CCCCCC;
-}
-#rightSidebar {
-    border-left: 1px solid #CCCCCC;
+    font-size: 0.875rem; /* Approx 11px */
+    border-left: 1px solid #666666;
+    border-right: 1px solid #666666;
+    flex-basis: 20%; /* Default width for sidebars */
+    min-width: 180px;
 }
 
-#leftSidebar h4, #rightSidebar h4 {
+.sidebar h4 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.125rem; /* 18px / 16px, increased from 14px */
-    color: var(--heading-color-dark);
+    font-size: 1.125rem; /* Approx 14px */
+    color: #000066;
     margin-top: 0;
-    border-bottom: 1px dashed #666666; /* Darker dash for better visibility */
+    margin-bottom: 0.5rem;
+    border-bottom: 1px dashed #333333;
     padding-bottom: 0.25rem;
 }
-#leftSidebar ul, #rightSidebar ul {
+
+.sidebar ul {
     list-style-type: square;
-    margin-left: 0;
-    padding-left: 1.25rem; /* 20px / 16px */
+    padding-left: 1.25rem; /* 20px */
+    margin-bottom: 1rem;
 }
-#leftSidebar a, #rightSidebar a {
-    color: var(--link-color);
-    text-decoration: none;
+
+.sidebar a {
+    color: #003399; /* WCAG AAA Pass on #EEEEEE */
 }
-#leftSidebar a:hover, #rightSidebar a:hover, 
-#leftSidebar a:focus, #rightSidebar a:focus {
-    text-decoration: underline;
-    color: var(--link-hover-color);
+
+.sidebar a:hover,
+.sidebar a:focus {
+    color: #FF0000; /* Red on hover */
+}
+
+#left-sidebar {
+    order: 1; /* Default order */
+}
+
+#right-sidebar {
+    order: 3; /* Default order */
 }
 
 /* Main Content Area */
-#mainContent {
-    padding: 1rem;
+.main-content {
+    padding: 1.5rem;
     line-height: 1.6;
-    flex-basis: 60%; /* Takes up more space initially */
-    flex-grow: 2; /* Grows more than sidebars */
-    min-width: 300px; /* Minimum width before stacking */
+    flex-grow: 1;
+    flex-basis: 60%; /* Takes remaining space or default width */
+    order: 2; /* Default order */
+    min-width: 300px; /* Ensure content doesn't get too squished */
 }
 
-#mainContent h1, .subpageContent h1 { /* For main page title in content */
-    font-family: "Arial Black", Gadget, sans-serif;
-    color: var(--heading-color-dark);
-    font-size: 1.75rem; /* 28px / 16px, increased from 24px */
-    border-bottom: 2px solid #CCCCCC;
-    padding-bottom: 0.3125rem; /* 5px / 16px */
+.main-content h2 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.5rem; /* Approx 20px */
+    color: #990000; /* Dark Red */
     margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
-#mainContent h2 {
+.main-content h3 {
     font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.5rem; /* 24px / 16px, increased from 20px */
-    color: var(--heading-color-red);
-    margin-top: 0;
-}
-#mainContent h3 {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 1.25rem; /* 20px / 16px, increased from 16px */
-    color: var(--heading-color-dark);
+    font-size: 1.25rem; /* Approx 16px */
+    color: #000066; /* Dark Blue */
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
 }
-#mainContent h4 { /* For sub-article titles or other smaller headings */
+
+.main-content h4 {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.0625rem; /* 17px / 16px, increased from 13px */
-    margin: 0.5rem 0;
+    font-size: 1rem; /* Approx 13px */
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
 }
-#mainContent h4 a {
-    color: var(--link-color);
-    text-decoration: none;
+
+.main-content h4 a {
+    color: #003399;
 }
-#mainContent h4 a:hover, #mainContent h4 a:focus {
-    color: var(--link-hover-color);
-    text-decoration: underline;
+
+.main-content h4 a:hover,
+.main-content h4 a:focus {
+    color: #FF0000;
 }
-#mainContent p {
+
+.main-content p {
     margin-bottom: 1rem;
 }
 
-/* Responsive Images */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Removes extra space below image */
+.main-content .main-image {
+    border: 2px solid #333333;
+    padding: 0.25rem;
+    margin: 0 auto 1rem auto; /* Centering */
 }
 
-#mainContent .news-image, 
-#mainContent .mainImage { /* .mainImage is from original, kept for compatibility */
-    border: 2px solid #666666; /* Darker border */
-    padding: 0.25rem;
+/* Styles for images within news item listings (previously table based) */
+.news-item {
+    display: flex;
+    flex-wrap: wrap; /* Allow image and text to wrap on small screens */
+    gap: 1rem;
     margin-bottom: 1rem;
-    margin-left: auto;
-    margin-right: auto;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
 }
 
-#mainContent .news-image-floated {
-    border: 1px solid #999999;
-    padding: 0.25rem;
-    margin-right: 1rem;
-    margin-bottom: 0.5rem;
-    float: left; /* Keep float for this specific class if layout demands */
+.news-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 
-/* Clearfix for floated elements if needed, though Flexbox reduces need */
-#mainContent article::after {
-    content: "";
-    clear: both;
-    display: table;
+.news-item img {
+    border: 1px solid #666666;
+    flex-shrink: 0; /* Prevent image from shrinking too much */
+    width: 100px; /* Fixed width for thumbnail */
+    height: 75px;
+    object-fit: cover;
+}
+
+.news-item-content {
+    flex-grow: 1;
+}
+
+.news-item-content h4 {
+    margin-top: 0;
 }
 
 .date {
-    font-size: 0.875rem; /* 14px / 16px, increased from 10px */
-    color: #555555; /* Darker gray */
+    font-size: 0.875rem; /* Approx 10px */
+    color: #666666;
     font-style: italic;
+    display: block;
+    margin-bottom: 0.5rem;
 }
-hr {
+
+hr.separator {
     border: 0;
     height: 1px;
-    background-color: #BBBBBB; /* Lighter hr */
+    background-color: #999999;
     margin: 1.5rem 0;
 }
 
 /* Footer */
-#footer {
-    background-color: var(--footer-bg);
-    color: var(--footer-text);
+.site-footer {
+    background-color: #333333; /* Dark Gray */
+    color: #CCCCCC; /* Light Gray text */
     text-align: center;
     padding: 1rem;
-    font-size: 0.875rem; /* 14px / 16px, increased from 10px */
-    border-top: 2px solid var(--border-color);
-}
-#footer p {
-    margin: 0.25rem 0;
+    font-size: 0.875rem; /* Approx 10px */
+    border-top: 2px solid #000000;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
 }
 
-/* Subpage specific styles - Ensure consistency */
-.subpageContent {
-    /* padding: 1.25rem; // Already handled by #mainContent padding */
-    background-color: var(--content-bg); /* Keep consistent with main content area */
+.site-footer p {
+    margin-bottom: 0.25rem;
 }
 
-/* Styles for index.html specific content */
-.main-story {
-    margin-bottom: 1.5rem;
-}
-
-.more-news .news-item {
-    display: flex; /* Use flexbox for image and text alignment */
+/* Subpage specific styles */
+.subpage-content h1, /* Targets h1 inside main content on subpages */
+.main-content > h1 { /* Targets h1 directly inside main-content (e.g. about page) */
+    font-family: "Arial Black", Gadget, sans-serif;
+    color: #000066;
+    font-size: 1.75rem; /* Approx 24px */
+    border-bottom: 2px solid #CCCCCC;
+    padding-bottom: 0.5rem;
     margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #EEEEEE;
 }
 
-.more-news .news-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.subpage-content {
+    background-color: #FAFAFA; /* Slightly off-white for subpage content background */
 }
 
-.more-news .news-item-image {
-    flex-shrink: 0; /* Prevent image from shrinking */
-    width: 100px; /* Fixed width for thumbnail */
-    height: 75px; /* Fixed height for thumbnail */
-    object-fit: cover; /* Ensure image covers the area without distortion */
+/* Utility classes */
+.float-right {
+    float: right;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.float-left {
+    float: left;
     margin-right: 1rem;
-    border: 1px solid #DDDDDD;
-}
-
-.more-news .news-item-content {
-    flex-grow: 1;
-}
-
-.more-news .news-item-content h4 {
-    margin-top: 0;
-    margin-bottom: 0.25rem;
-    font-size: 1rem; /* Adjust size as needed */
-}
-
-.more-news .news-item-content p {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-}
-
-.small-centered-text {
-    font-size: 0.875rem;
-    text-align: center;
-    color: var(--text-color);
-}
-
-/* Styles for floated images */
-#mainContent .news-image-floated-right {
-    border: 1px solid #999999;
-    padding: 0.25rem;
-    margin-left: 1rem;
     margin-bottom: 0.5rem;
-    float: right;
 }
 
-/* Clearfix for floated images within articles (ensure parent contains floats) */
-#mainContent article::after {
-    content: "";
+.clear-both {
     clear: both;
-    display: table;
 }
 
-/* About Page Specific Styles */
-.about-page-content section {
-    margin-bottom: 1.5rem;
-}
-
-
-.contact-address {
-    font-style: normal;
-    font-size: 0.9rem; /* Slightly smaller */
-    margin-bottom: 1rem;
-}
-
-.about-team-image {
-    float: right;
-    margin-left: 1rem;
-    margin-bottom: 0.5rem;
-    border: 2px outset var(--border-color, #999);
-    max-width: 250px; /* Control size */
-}
-
-.legacy-badges {
-    text-align: center; /* Already handled by .centered-text if applied to parent */
-    margin-top: 1rem;
-}
-
-.legacy-badges img {
-    display: inline-block; /* Allow side-by-side */
-    margin: 0 0.5rem;
-    border: 1px solid #DDD; /* Optional: slight border for badges */
-}
-
-.site-award {
-    margin-bottom: 1rem;
+.text-center {
     text-align: center;
 }
 
-.site-award img {
-    margin-bottom: 0.25rem;
-    border: 1px solid #DDD; /* Optional: slight border for award images */
+.img-bordered {
+    border: 1px solid #999;
 }
 
-.award-caption {
-    font-size: 0.8rem; /* Smaller text for caption */
-    color: #555555;
-    font-style: italic;
+.img-outset-border {
+    border: 2px outset #999;
 }
 
 /* Media Queries for Responsiveness */
 
-/* For tablets and smaller desktops */
+/* Medium screens (e.g., tablets) */
 @media (max-width: 992px) {
-    #leftSidebar, #rightSidebar {
-        flex-basis: 150px; /* Slightly smaller sidebars */
+    .content-wrapper {
+        flex-direction: column;
     }
-    #mainContent {
-        flex-basis: calc(100% - 300px - 2rem); /* Adjust main content width if sidebars are present */
-    }
-}
 
-/* For smaller tablets and large phones */
-@media (max-width: 768px) {
-    .content-grid {
-        flex-direction: column; /* Stack elements vertically */
-    }
-    #leftSidebar, #rightSidebar, #mainContent {
-        flex-basis: 100%; /* Full width for all sections */
+    .sidebar {
+        flex-basis: auto; /* Full width */
         width: 100%;
+        order: initial !important; /* Reset order for stacking */
         border-left: none;
         border-right: none;
+        border-bottom: 1px solid #666666;
     }
-    #leftSidebar {
-        border-bottom: 1px solid #CCCCCC;
-        margin-bottom: 1rem;
+
+    #left-sidebar {
+        border-top: 1px solid #666666; /* Add top border when stacked */
     }
-    #rightSidebar {
-        border-top: 1px solid #CCCCCC;
-        margin-top: 1rem;
+
+    .main-content {
+        flex-basis: auto; /* Full width */
+        width: 100%;
+        order: initial !important;
     }
-    #mainContent .news-image-floated {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 80%; /* Don't let floated images take full width */
+
+    .site-header h1 {
+        font-size: 1.8rem;
     }
-    .nav a {
-        display: block; /* Stack nav links */
-        margin: 0.5rem 0;
-        padding: 0.75rem;
+    .site-header p {
+        font-size: 0.8rem;
+    }
+    .main-nav li {
+        margin: 0 0.2rem;
+    }
+    .main-nav a {
+        padding: 0.2rem 0.3rem;
     }
 }
 
-/* For small phones */
-@media (max-width: 480px) {
-    :root {
-        font-size: 14px; /* Reduce base font size slightly */
+/* Small screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+    html {
+        font-size: 93.75%; /* Approx 15px base for smaller screens */
     }
-    #header h1 {
-        font-size: 1.75rem;
-    }
-    #header p {
-        font-size: 0.875rem;
-    }
-    #mainContent h1, .subpageContent h1 {
+
+    .site-header h1 {
         font-size: 1.5rem;
     }
-    #mainContent h2 {
-        font-size: 1.25rem;
+
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
     }
-    .nav a {
-        padding: 0.5rem;
+    .main-nav li {
+        display: block;
+        margin: 0.25rem 0;
     }
+
+    .main-content {
+        padding: 1rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.3rem;
+    }
+
+    .main-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .news-item {
+        flex-direction: column; /* Stack image and text */
+        align-items: center; /* Center items when stacked */
+    }
+    .news-item img {
+        width: 150px; /* Larger image for stacked view */
+        height: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .float-right, .float-left {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto; /* Center floated images when stacking */
+    }
+}
+
+/* Accessibility: Focus visible for keyboard users */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 2px solid #0000FF; /* Blue outline */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(0,0,255,0.3);
 }

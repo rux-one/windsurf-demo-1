@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oniet - Sports</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<div class="page-wrapper">
-    <header id="header">
+<div class="container">
+    <header class="site-header" role="banner">
         <h1>Oniet</h1>
         <p>Bringing you yesterday's news, today!</p>
     </header>
 
-    <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="world.html">World News</a>
-        <a href="local.html">Local News</a>
-        <a href="sports.html">Sports</a>
-        <a href="about.html">About Us</a>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="world.html">World News</a></li>
+            <li><a href="local.html">Local News</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
     </nav>
 
-    <div class="content-grid">
-        <aside id="leftSidebar">
+    <div class="content-wrapper">
+        <aside id="left-sidebar" class="sidebar" role="complementary">
             <h4>Leagues</h4>
             <ul>
                 <li><a href="#">Basketball</a></li>
@@ -31,52 +33,50 @@
                 <li><a href="#">Football</a></li>
             </ul>
             <h4>Get Gear!</h4>
-            <a href="#"><img src="https://placehold.co/140x120?text=Sports+Gear" alt="Advertisement for sports gear" /></a>
+            <a href="#"><img src="https://placehold.co/140x120?text=Sports+Gear" alt="Advertisement for sports gear"></a>
         </aside>
 
-        <main id="mainContent" class="subpageContent">
+        <main id="main-content" class="main-content subpage-content page-sports" role="main">
             <h1>Sports News</h1>
             
-            <article>
+            <article class="news-article">
                 <h2>Local Team Wins Championship!</h2>
                 <p class="date">Posted: May 17, 2000</p>
-                <img src="https://placehold.co/450x220?text=Championship+Game" alt="Placeholder image for Championship Game news" class="mainImage news-image" />
+                <img src="https://placehold.co/450x220?text=Championship+Game" alt="Image from the Championship Game where the local team won" class="main-image responsive-img" />
                 <p>The home team clinched the championship in a thrilling final game. Sed porttitor lectus nibh. Curabitur aliquet quam id dui posuere blandit. <a href="#">Read more...</a></p>
             </article>
 
-            <hr />
+            <hr class="separator">
 
-            <article>
+            <article class="news-article">
                 <h2>Star Player Announces Retirement</h2>
                 <p class="date">Posted: May 14, 2000</p>
                 <p>A surprising announcement today as a beloved star player decides to hang up their cleats. Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more...</a></p>
             </article>
             
-            <hr />
+            <hr class="separator">
 
-            <article>
+            <article class="news-article">
                 <h2>Upcoming Season Preview</h2>
                 <p class="date">Posted: May 10, 2000</p>
-                <img src="https://placehold.co/180x130?text=Season+Preview" alt="Placeholder image for Season Preview news" class="news-image-floated" />
+                <img src="https://placehold.co/180x130?text=Season+Preview" alt="Promotional image for the upcoming sports season preview" class="image-left-float responsive-img" />
                 <p>Get ready for another exciting season of sports action! Here's what to look out for. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor eget felis porttitor volutpat. <a href="#">Read more...</a></p>
             </article>
-
         </main>
 
-        <aside id="rightSidebar">
+        <aside id="right-sidebar" class="sidebar" role="complementary">
             <h4>Fantasy Leagues</h4>
             <ul>
                 <li><a href="#">Join a League</a></li>
                 <li><a href="#">Player Stats</a></li>
             </ul>
             <h4>Tickets</h4>
-            <a href="#"><img src="https://placehold.co/140x150?text=Buy+Tickets" alt="Advertisement for sports tickets" /></a>
+            <a href="#"><img src="https://placehold.co/140x150?text=Buy+Tickets" alt="Advertisement for buying sports tickets"></a>
         </aside>
     </div>
 
-    <footer id="footer">
-        <p>&copy; 2000 Oniet. All rights reserved.</p>
-        <p>The advice "Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution" is historical and no longer applicable.</p>
+    <footer class="site-footer" role="contentinfo">
+        <p>&copy; 2000 Oniet. All rights reserved. Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution.</p>
         <p>Last Updated: May 19, 2000</p>
     </footer>
 </div>

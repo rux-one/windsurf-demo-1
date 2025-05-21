@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oniet - Your Retro News Source!</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
-<div class="page-wrapper">
-    <header id="header">
+<div class="container">
+    <header class="site-header" role="banner">
         <h1>Oniet</h1>
         <p>Bringing you yesterday's news, today!</p>
     </header>
 
-    <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="world.html">World News</a>
-        <a href="local.html">Local News</a>
-        <a href="sports.html">Sports</a>
-        <a href="about.html">About Us</a>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="world.html">World News</a></li>
+            <li><a href="local.html">Local News</a></li>
+            <li><a href="sports.html">Sports</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
     </nav>
 
-    <div class="content-grid">
-        <aside id="leftSidebar">
+    <div class="content-wrapper">
+        <aside id="left-sidebar" class="sidebar" role="complementary">
             <h4>Quick Links</h4>
             <ul>
                 <li><a href="#">Weather</a></li>
@@ -32,48 +34,46 @@
                 <li><a href="#">Lottery Results</a></li>
             </ul>
             <h4>Advertisement</h4>
-            <a href="#"><img src="https://placehold.co/140x200?text=Ad+Space" alt="Advertisement placeholder" /></a>
-            <a href="#"><img src="https://placehold.co/140x200?text=Another+Ad" alt="Another advertisement placeholder" /></a>
+            <a href="#"><img src="https://placehold.co/140x200?text=Ad+Space" alt="Advertisement placeholder: Ad Space"></a>
+            <a href="#"><img src="https://placehold.co/140x200?text=Another+Ad" alt="Advertisement placeholder: Another Ad"></a>
         </aside>
 
-        <main id="mainContent">
-            <article class="main-story">
-                <h2>Main Headline: Internet Craze Sweeps Nation!</h2>
-                <p class="date">Posted: May 19, 2000</p>
-                <img src="https://placehold.co/470x250?text=Big+News+Story" alt="Image illustrating the main news story about the internet craze" class="mainImage news-image" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read more...</a></p>
-            </article>
+        <main id="main-content" class="main-content" role="main">
+            <h2>Main Headline: Internet Craze Sweeps Nation!</h2>
+            <p class="date">Posted: May 19, 2000</p>
+            <img src="https://placehold.co/470x250?text=Big+News+Story" alt="Stylized image representing a major news story about the internet craze" class="main-image" />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="#">Read more...</a></p>
 
-            <hr />
+            <hr class="separator">
 
-            <section class="more-news">
-                <h3>More News</h3>
+            <h3>More News</h3>
+            <div class="news-items-container">
                 <article class="news-item">
-                    <img src="https://placehold.co/100x75?text=Story+1" alt="Placeholder image for MP3 Players news story" class="news-item-image" />
+                    <img src="https://placehold.co/100x75?text=Story+1" alt="Image for news story: New MP3 Players Hit the Market">
                     <div class="news-item-content">
                         <h4><a href="#">New MP3 Players Hit the Market</a></h4>
                         <p>These tiny devices can hold up to 10 songs! Experts are amazed... <a href="#">More...</a></p>
                     </div>
                 </article>
                 <article class="news-item">
-                    <img src="https://placehold.co/100x75?text=Story+2" alt="Placeholder image for Y2K Bug news story" class="news-item-image" />
+                    <img src="https://placehold.co/100x75?text=Story+2" alt="Image for news story: Y2K Bug: Averted or Overhyped?">
                     <div class="news-item-content">
                         <h4><a href="#">Y2K Bug: Averted or Overhyped?</a></h4>
                         <p>The world continues to turn as the new millennium begins without major computer failures... <a href="#">More...</a></p>
                     </div>
                 </article>
                  <article class="news-item">
-                    <img src="https://placehold.co/100x75?text=Story+3" alt="Placeholder image for Upcoming Movie Releases news story" class="news-item-image" />
+                    <img src="https://placehold.co/100x75?text=Story+3" alt="Image for news story: Upcoming Movie Releases">
                     <div class="news-item-content">
                         <h4><a href="#">Upcoming Movie Releases</a></h4>
                         <p>Check out the latest blockbusters coming to a cinema near you... <a href="#">More...</a></p>
                     </div>
                 </article>
-            </section>
+            </div>
         </main>
 
-        <aside id="rightSidebar">
+        <aside id="right-sidebar" class="sidebar" role="complementary">
             <h4>Editor's Picks</h4>
             <ul>
                 <li><a href="#">The Future of Email</a></li>
@@ -81,14 +81,13 @@
                 <li><a href="#">Top 5 Video Games</a></li>
             </ul>
             <h4>Special Offer!</h4>
-            <a href="#"><img src="https://placehold.co/140x100?text=Special+Offer" alt="Special Offer advertisement" /></a>
-            <p class="small-centered-text">Click here for a free GeoCities page!</p>
+            <a href="#"><img src="https://placehold.co/140x100?text=Special+Offer" alt="Promotional image for a special offer"></a>
+            <p class="text-center" style="font-size:0.8em;">Click here for a free GeoCities page!</p> <!-- Kept small text style for retro feel, but using class if possible or em for relative sizing -->
         </aside>
     </div>
 
-    <footer id="footer">
-        <p>&copy; 2000 Oniet. All rights reserved.</p>
-        <p>The advice "Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution" is historical and no longer applicable.</p>
+    <footer class="site-footer" role="contentinfo">
+        <p>&copy; 2000 Oniet. All rights reserved. Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution.</p>
         <p>Last Updated: May 19, 2000</p>
     </footer>
 </div>
